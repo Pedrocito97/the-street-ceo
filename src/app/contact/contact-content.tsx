@@ -2,20 +2,31 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Mail, MessageSquare, Mic, Users, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import {
+  Mail,
+  MessageSquare,
+  Mic,
+  Users,
+  Instagram,
+  Twitter,
+  Linkedin,
+  Youtube,
+  Calendar,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { GlassCard } from "@/components/shared/glass-card";
 import { FloatingOrb } from "@/components/shared/floating-orb";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { CalendlyEmbed } from "@/components/shared/calendly-embed";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 const contactOptions = [
   {
     icon: Users,
     title: "Coaching & Mentorship",
-    description: "Apply for 1:1 coaching or join The Street CEO Academy",
+    description: "Apply for 1-on-1 coaching, group training, or workshops",
     link: "/coaching",
     linkText: "View Coaching Options",
   },
@@ -43,10 +54,22 @@ const contactOptions = [
 ];
 
 const socialLinks = [
-  { href: "https://instagram.com/thestreetceo", icon: Instagram, label: "Instagram" },
+  {
+    href: "https://instagram.com/thestreetceo",
+    icon: Instagram,
+    label: "Instagram",
+  },
   { href: "https://twitter.com/thestreetceo", icon: Twitter, label: "Twitter" },
-  { href: "https://linkedin.com/in/cameronmurrell", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://youtube.com/@thestreetceo", icon: Youtube, label: "YouTube" },
+  {
+    href: "https://linkedin.com/in/cameronmurrell",
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://youtube.com/@thestreetceo",
+    icon: Youtube,
+    label: "YouTube",
+  },
 ];
 
 export function ContactPageContent() {
@@ -75,12 +98,9 @@ export function ContactPageContent() {
             >
               Let&apos;s <span className="text-gold-gradient">Connect</span>
             </motion.h1>
-            <motion.p
-              variants={staggerItem}
-              className="text-xl text-white/70"
-            >
-              Whether you&apos;re ready to transform your life, book a speaking engagement,
-              or explore partnership opportunities - I&apos;m here.
+            <motion.p variants={staggerItem} className="text-xl text-white/70">
+              Whether you&apos;re ready to transform, book a speaking engagement, or
+              explore partnerships - I&apos;m here.
             </motion.p>
           </motion.div>
         </div>
@@ -107,9 +127,7 @@ export function ContactPageContent() {
                       <h3 className="font-display text-xl font-bold text-white mb-2">
                         {option.title}
                       </h3>
-                      <p className="text-white/60 mb-4">
-                        {option.description}
-                      </p>
+                      <p className="text-white/60 mb-4">{option.description}</p>
                       {option.link ? (
                         <Link
                           href={option.link}
@@ -134,8 +152,28 @@ export function ContactPageContent() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Book a Discovery Call - Calendly Section */}
       <section className="section-padding bg-black">
+        <div className="container-wide">
+          <SectionHeading
+            label="Skip the back-and-forth"
+            title="Book a Discovery Call"
+            description="For speaking engagements or coaching consultations, schedule a call directly."
+          />
+
+          <div className="max-w-4xl mx-auto">
+            <GlassCard className="p-0 overflow-hidden">
+              <CalendlyEmbed
+                url="https://calendly.com/thestreetceo/discovery"
+                height={700}
+              />
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Social */}
+      <section className="section-padding bg-[var(--charcoal)]">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Form */}
@@ -145,8 +183,8 @@ export function ContactPageContent() {
               viewport={{ once: true }}
             >
               <SectionHeading
-                label="Send A Message"
-                title="General Enquiries"
+                label="Prefer to write?"
+                title="Send A Message"
                 align="left"
               />
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -157,7 +195,7 @@ export function ContactPageContent() {
                     </label>
                     <Input
                       placeholder="Your first name"
-                      className="bg-[var(--charcoal)] border-white/10 text-white placeholder:text-white/40"
+                      className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                     />
                   </div>
                   <div>
@@ -166,7 +204,7 @@ export function ContactPageContent() {
                     </label>
                     <Input
                       placeholder="Your last name"
-                      className="bg-[var(--charcoal)] border-white/10 text-white placeholder:text-white/40"
+                      className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                     />
                   </div>
                 </div>
@@ -177,7 +215,7 @@ export function ContactPageContent() {
                   <Input
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-[var(--charcoal)] border-white/10 text-white placeholder:text-white/40"
+                    className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                   />
                 </div>
                 <div>
@@ -186,7 +224,7 @@ export function ContactPageContent() {
                   </label>
                   <Input
                     placeholder="What's this about?"
-                    className="bg-[var(--charcoal)] border-white/10 text-white placeholder:text-white/40"
+                    className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                   />
                 </div>
                 <div>
@@ -196,7 +234,7 @@ export function ContactPageContent() {
                   <Textarea
                     placeholder="Your message..."
                     rows={5}
-                    className="bg-[var(--charcoal)] border-white/10 text-white placeholder:text-white/40 resize-none"
+                    className="bg-black/50 border-white/10 text-white placeholder:text-white/40 resize-none"
                   />
                 </div>
                 <Button
@@ -221,8 +259,8 @@ export function ContactPageContent() {
                 align="left"
               />
               <p className="text-white/60 mb-8">
-                Get daily motivation, behind-the-scenes content, and real-time insights.
-                Join thousands following The Street CEO movement.
+                Get daily insights, behind-the-scenes content, and real-time
+                updates. Join thousands following The Street CEO movement.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-12">
@@ -248,8 +286,8 @@ export function ContactPageContent() {
                   Response Time
                 </h3>
                 <p className="text-white/60">
-                  We aim to respond to all enquiries within 24-48 business hours.
-                  For urgent speaking requests, please indicate this in your subject line.
+                  We respond to all enquiries within 24-48 business hours. For
+                  urgent speaking requests, indicate this in your subject line.
                 </p>
               </GlassCard>
             </motion.div>

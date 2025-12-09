@@ -1,41 +1,73 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mic, Users, Globe, Clock, ArrowRight, Check, Star } from "lucide-react";
+import {
+  Mic,
+  Users,
+  Globe,
+  Clock,
+  ArrowRight,
+  Check,
+  Star,
+  Building2,
+  Trophy,
+  Rocket,
+  Target,
+  TrendingUp,
+  Brain,
+  Download,
+  Calendar,
+  Phone,
+  FileText,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { MagneticButton } from "@/components/shared/magnetic-button";
 import { GlassCard } from "@/components/shared/glass-card";
 import { FloatingOrb } from "@/components/shared/floating-orb";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { AnimatedCounter } from "@/components/shared/animated-counter";
+import { CalendlyEmbed } from "@/components/shared/calendly-embed";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 const keynotes = [
   {
-    title: "Street to CEO: Built From Nothing",
-    description: "My signature keynote. The raw, unfiltered story of transformation - from having nothing to building everything. Perfect for corporate events, sales conferences, and motivational gatherings.",
-    duration: "45-90 minutes",
-    topics: ["Mindset transformation", "Overcoming adversity", "Building from zero", "The power of discipline"],
-  },
-  {
     title: "Discipline Over Everything",
-    description: "Why motivation fails and discipline delivers. A tactical breakdown of the systems and habits that separate top performers from everyone else.",
+    description:
+      "Why motivation fails and discipline delivers. A tactical breakdown of the systems and habits that separate top performers from everyone else.",
     duration: "45-60 minutes",
-    topics: ["Daily routines of winners", "Building unbreakable habits", "Mental toughness", "Eliminating excuses"],
+    idealFor: "Sales teams, corporate training, leadership events",
+    topics: [
+      "Daily routines of winners",
+      "Building unbreakable habits",
+      "Mental toughness",
+      "Eliminating excuses",
+    ],
   },
   {
     title: "High-Performance Sales Leadership",
-    description: "The exact strategies I used to build and scale 100+ rep teams across three countries. For sales teams and leadership conferences.",
+    description:
+      "The exact strategies I used to build and scale 100+ rep teams across three countries. For sales teams and leadership conferences.",
     duration: "60-90 minutes",
-    topics: ["Recruiting top talent", "Team culture creation", "Performance management", "Scaling operations"],
+    idealFor: "Sales conferences, management summits, B2B events",
+    topics: [
+      "Recruiting top talent",
+      "Team culture creation",
+      "Performance management",
+      "Scaling operations",
+    ],
   },
   {
     title: "The Street CEO Mindset",
-    description: "Street-smart business strategy for entrepreneurs and leaders. How to think different, move different, and win different.",
+    description:
+      "Street-smart business strategy for entrepreneurs and leaders. How to think different, move different, and win different.",
     duration: "45-60 minutes",
-    topics: ["Strategic thinking", "Opportunity recognition", "Risk assessment", "Execution excellence"],
+    idealFor: "Entrepreneurship events, startup conferences, motivational gatherings",
+    topics: [
+      "Strategic thinking",
+      "Opportunity recognition",
+      "Risk assessment",
+      "Execution excellence",
+    ],
   },
 ];
 
@@ -46,39 +78,98 @@ const stats = [
   { value: 98, suffix: "%", label: "Satisfaction" },
 ];
 
+const audiences = [
+  {
+    icon: Building2,
+    title: "Corporate Events & Conferences",
+    description: "Transform company culture with raw, authentic keynotes that drive action.",
+    size: "100-5,000+ attendees",
+  },
+  {
+    icon: Target,
+    title: "Sales Kickoffs & Team Events",
+    description: "Fire up your sales force with tactical strategies that close deals.",
+    size: "50-500 attendees",
+  },
+  {
+    icon: Trophy,
+    title: "Leadership Summits",
+    description: "Equip your leaders with street-smart wisdom for real-world challenges.",
+    size: "50-300 attendees",
+  },
+  {
+    icon: Rocket,
+    title: "Entrepreneurship Events",
+    description: "Inspire founders with the mindset needed to build from nothing.",
+    size: "100-2,000 attendees",
+  },
+];
+
+const problemsSolved = [
+  {
+    icon: Brain,
+    problem: "Team lacks discipline and accountability",
+    solution: "Install systems that create consistency without micromanagement",
+  },
+  {
+    icon: TrendingUp,
+    problem: "Sales performance has plateaued",
+    solution: "Inject proven tactics that reignite competitive fire",
+  },
+  {
+    icon: Users,
+    problem: "Leaders struggle to motivate diverse teams",
+    solution: "Develop authentic leadership that resonates across backgrounds",
+  },
+  {
+    icon: Target,
+    problem: "Organization needs mindset transformation",
+    solution: "Shift thinking from excuses to execution at every level",
+  },
+];
+
 const testimonials = [
   {
-    quote: "Cameron brought an energy to our annual conference that we've never experienced before. Our team is still talking about it months later.",
+    quote:
+      "Cameron brought an energy to our annual conference that we've never experienced before. Our team is still talking about it months later.",
     author: "Sarah Mitchell",
     role: "VP of Sales, TechCorp UK",
   },
   {
-    quote: "Raw, authentic, and incredibly impactful. Cameron doesn't just speak - he transforms the room.",
+    quote:
+      "Raw, authentic, and incredibly impactful. Cameron doesn't just speak - he transforms the room.",
     author: "James Rodriguez",
     role: "Event Director, Leadership Summit",
   },
 ];
 
+const meetingPlannerIncludes = [
+  { icon: Phone, text: "Pre-event discovery call to customize content" },
+  { icon: FileText, text: "Tailored presentation for your audience" },
+  { icon: Users, text: "Optional Q&A or breakout session" },
+  { icon: Download, text: "Post-event resources for attendees" },
+];
+
 const bookingProcess = [
   {
     step: "1",
-    title: "Submit Enquiry",
-    description: "Fill out the form with your event details",
+    title: "Book a Call",
+    description: "Schedule a discovery call to discuss your event",
   },
   {
     step: "2",
-    title: "Discovery Call",
-    description: "We'll discuss your goals and audience",
-  },
-  {
-    step: "3",
     title: "Custom Proposal",
     description: "Receive a tailored speaking package",
   },
   {
+    step: "3",
+    title: "Confirm & Prepare",
+    description: "Lock in dates and collaborate on content",
+  },
+  {
     step: "4",
-    title: "Book & Prepare",
-    description: "Confirm dates and collaborate on content",
+    title: "Deliver Impact",
+    description: "Transform your audience",
   },
 ];
 
@@ -106,21 +197,29 @@ export function SpeakingPageContent() {
                 variants={staggerItem}
                 className="font-display text-5xl lg:text-6xl font-bold text-white mb-6"
               >
-                Commanding The <span className="text-gold-gradient">Stage</span>
+                Keynotes That <span className="text-gold-gradient">Transform</span>
               </motion.h1>
               <motion.p
                 variants={staggerItem}
                 className="text-xl text-white/70 mb-8"
               >
-                Bring raw energy, real stories, and transformational insights to your next event.
-                Keynotes that move audiences from inspiration to action.
+                Raw energy. Real stories. Results that last beyond the event.
+                Give your audience the wake-up call they need to execute.
               </motion.p>
-              <motion.div variants={staggerItem}>
-                <a href="#enquiry">
+              <motion.div variants={staggerItem} className="flex flex-wrap gap-4">
+                <a href="#book-call">
                   <MagneticButton size="lg">
-                    Enquire Now
+                    Book a Discovery Call
                     <ArrowRight className="w-4 h-4 ml-2 inline-block" />
                   </MagneticButton>
+                </a>
+                <a href="#keynotes">
+                  <Button
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10 font-display uppercase tracking-wide"
+                  >
+                    View Keynotes
+                  </Button>
                 </a>
               </motion.div>
             </motion.div>
@@ -170,13 +269,13 @@ export function SpeakingPageContent() {
         </div>
       </section>
 
-      {/* Keynote Topics */}
+      {/* Who This Is For */}
       <section className="section-padding bg-black">
         <div className="container-wide">
           <SectionHeading
-            label="Signature Keynotes"
-            title="Speaking Topics"
-            description="Each presentation is customized to your audience and objectives."
+            label="Perfect For"
+            title="Who Books Cameron"
+            description="Event organizers who want more than inspiration - they want transformation."
           />
 
           <motion.div
@@ -184,11 +283,84 @@ export function SpeakingPageContent() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 gap-6 lg:gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {audiences.map((audience, index) => (
+              <motion.div key={index} variants={staggerItem}>
+                <GlassCard className="h-full text-center" delay={index * 0.1}>
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-[var(--gold)]/10 border border-[var(--gold)]/20 flex items-center justify-center mb-4">
+                    <audience.icon className="w-7 h-7 text-[var(--gold)]" />
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-white mb-2">
+                    {audience.title}
+                  </h3>
+                  <p className="text-white/60 text-sm mb-4">{audience.description}</p>
+                  <span className="text-[var(--gold)] text-xs uppercase tracking-wide">
+                    {audience.size}
+                  </span>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Problems I Solve */}
+      <section className="section-padding bg-[var(--charcoal)]">
+        <div className="container-wide">
+          <SectionHeading
+            label="The Impact"
+            title="Problems I Solve"
+            description="Every keynote is designed to address real challenges your organization faces."
+          />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          >
+            {problemsSolved.map((item, index) => (
+              <motion.div key={index} variants={staggerItem}>
+                <GlassCard className="h-full" delay={index * 0.1}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 shrink-0 rounded-xl bg-[var(--gold)]/10 border border-[var(--gold)]/20 flex items-center justify-center">
+                      <item.icon className="w-6 h-6 text-[var(--gold)]" />
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-sm mb-1">Problem:</p>
+                      <p className="text-white font-semibold mb-3">{item.problem}</p>
+                      <p className="text-white/50 text-sm mb-1">Solution:</p>
+                      <p className="text-[var(--gold)]">{item.solution}</p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Keynote Topics */}
+      <section id="keynotes" className="section-padding bg-black">
+        <div className="container-wide">
+          <SectionHeading
+            label="Signature Keynotes"
+            title="Three Powerful Presentations"
+            description="Each keynote is customized to your audience and objectives."
+          />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid lg:grid-cols-3 gap-6 lg:gap-8"
           >
             {keynotes.map((keynote, index) => (
               <motion.div key={index} variants={staggerItem}>
-                <GlassCard className="h-full" delay={index * 0.1}>
+                <GlassCard className="h-full flex flex-col" delay={index * 0.1}>
                   <div className="flex items-center gap-2 mb-4">
                     <Clock className="w-4 h-4 text-[var(--gold)]" />
                     <span className="text-white/50 text-sm">{keynote.duration}</span>
@@ -196,8 +368,15 @@ export function SpeakingPageContent() {
                   <h3 className="font-display text-2xl font-bold text-white mb-3">
                     {keynote.title}
                   </h3>
-                  <p className="text-white/60 mb-6">{keynote.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-white/60 mb-4 flex-grow">{keynote.description}</p>
+
+                  <div className="mb-4">
+                    <span className="text-[var(--gold)] text-xs uppercase tracking-wide">
+                      Ideal for: {keynote.idealFor}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
                     {keynote.topics.map((topic, i) => (
                       <span
                         key={i}
@@ -234,7 +413,10 @@ export function SpeakingPageContent() {
                 <GlassCard delay={index * 0.1}>
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[var(--gold)] text-[var(--gold)]" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-[var(--gold)] text-[var(--gold)]"
+                      />
                     ))}
                   </div>
                   <p className="text-white/80 text-lg mb-6 italic">
@@ -251,134 +433,99 @@ export function SpeakingPageContent() {
         </div>
       </section>
 
-      {/* Booking Process */}
+      {/* For Meeting Planners */}
       <section className="section-padding bg-black">
         <div className="container-wide">
-          <SectionHeading
-            label="How It Works"
-            title="Booking Process"
-          />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeading
+                label="For Event Organizers"
+                title="Meeting Planner Info"
+                description="Everything you need to make your event a success."
+                align="left"
+              />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {bookingProcess.map((step, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative"
+                variants={staggerContainer}
+                className="space-y-4"
               >
-                {/* Connector line */}
-                {index < bookingProcess.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-[60%] w-full h-px bg-gradient-to-r from-[var(--gold)]/30 to-transparent" />
-                )}
-                <GlassCard className="text-center">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-[var(--gold)]/10 border-2 border-[var(--gold)]/30 flex items-center justify-center mb-4">
-                    <span className="font-display text-2xl font-bold text-[var(--gold)]">
-                      {step.step}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-white mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-white/60 text-sm">{step.description}</p>
-                </GlassCard>
+                {meetingPlannerIncludes.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={staggerItem}
+                    className="flex items-center gap-4"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[var(--gold)]/10 border border-[var(--gold)]/20 flex items-center justify-center shrink-0">
+                      <item.icon className="w-5 h-5 text-[var(--gold)]" />
+                    </div>
+                    <span className="text-white/80">{item.text}</span>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
+
+              <div className="mt-8">
+                <Button
+                  variant="outline"
+                  className="border-[var(--gold)]/30 text-[var(--gold)] hover:bg-[var(--gold)]/10"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Speaker Kit
+                </Button>
+              </div>
+            </div>
+
+            <GlassCard>
+              <h3 className="font-display text-xl font-bold text-white mb-6">
+                Booking Process
+              </h3>
+              <div className="space-y-6">
+                {bookingProcess.map((step, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-[var(--gold)]/10 border border-[var(--gold)]/30 flex items-center justify-center">
+                      <span className="font-display font-bold text-[var(--gold)]">
+                        {step.step}
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">{step.title}</h4>
+                      <p className="text-white/60 text-sm">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </GlassCard>
           </div>
         </div>
       </section>
 
-      {/* Enquiry Form */}
-      <section id="enquiry" className="section-padding bg-[var(--charcoal)]">
+      {/* Book a Call - Calendly Section */}
+      <section id="book-call" className="section-padding bg-[var(--charcoal)]">
         <div className="container-wide">
-          <div className="max-w-2xl mx-auto">
-            <SectionHeading
-              label="Get In Touch"
-              title="Speaking Enquiry"
-              description="Tell us about your event and we'll get back to you within 24-48 hours."
-            />
+          <SectionHeading
+            label="Let's Talk"
+            title="Book a Discovery Call"
+            description="Tell us about your event and let's explore how we can make it unforgettable."
+          />
 
-            <GlassCard>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
-                      Your Name *
-                    </label>
-                    <Input
-                      placeholder="Full name"
-                      className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder="your@email.com"
-                      className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
-                    />
-                  </div>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
-                      Organization
-                    </label>
-                    <Input
-                      placeholder="Company/Organization"
-                      className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
-                      Event Date
-                    </label>
-                    <Input
-                      type="date"
-                      className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white/80 mb-2">
-                    Event Type
-                  </label>
-                  <Input
-                    placeholder="Conference, Workshop, Corporate Event, etc."
-                    className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white/80 mb-2">
-                    Expected Audience Size
-                  </label>
-                  <Input
-                    placeholder="Approximate number of attendees"
-                    className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white/80 mb-2">
-                    Tell Us About Your Event *
-                  </label>
-                  <Textarea
-                    placeholder="Share details about your event, audience, and what you're hoping to achieve..."
-                    rows={5}
-                    className="bg-black/50 border-white/10 text-white placeholder:text-white/40 resize-none"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-[var(--gold)] text-black hover:bg-[var(--gold-light)] font-display font-semibold uppercase tracking-wide h-12 hover-gold-glow"
-                >
-                  Submit Enquiry
-                </Button>
-              </form>
+          <div className="max-w-4xl mx-auto">
+            <GlassCard className="p-0 overflow-hidden">
+              <CalendlyEmbed
+                url="https://calendly.com/thestreetceo/discovery"
+                height={700}
+              />
             </GlassCard>
+            <p className="text-center text-white/40 text-sm mt-4">
+              Prefer email? Reach out at{" "}
+              <a
+                href="mailto:speaking@thestreetceo.com"
+                className="text-[var(--gold)] hover:underline"
+              >
+                speaking@thestreetceo.com
+              </a>
+            </p>
           </div>
         </div>
       </section>

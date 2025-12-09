@@ -2,39 +2,76 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Target, Shield, Flame, Crown } from "lucide-react";
+import {
+  ArrowRight,
+  Target,
+  Shield,
+  Flame,
+  Crown,
+  TrendingDown,
+  RefreshCw,
+  Zap,
+  Check,
+  Mic,
+} from "lucide-react";
 import { MagneticButton } from "@/components/shared/magnetic-button";
 import { GlassCard } from "@/components/shared/glass-card";
 import { FloatingOrb } from "@/components/shared/floating-orb";
 import { AnimatedCounter } from "@/components/shared/animated-counter";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem } from "@/lib/animations";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 
 const timeline = [
   {
-    year: "The Beginning",
-    title: "Born from Nothing",
-    description: "Growing up on the streets, I learned early that survival requires strategy. No silver spoons, no safety nets - just raw determination.",
-  },
-  {
-    year: "The Grind",
-    title: "First Sales Role",
-    description: "Started at the bottom, knocking doors and facing rejection daily. Every 'no' became fuel. Every closed deal built my foundation.",
+    year: "Where I Came From",
+    title: "No Degree. No Privilege. Just Hunger.",
+    description:
+      "Growing up with nothing handed to me. No fancy education, no connections. Just a family depending on me and unshakeable drive.",
+    icon: Target,
   },
   {
     year: "The Rise",
-    title: "UK Expansion",
-    description: "Built my first team in the UK. Discovered that leadership isn't about titles - it's about transformation. Scaled to 50+ reps.",
+    title: "7 Figures by 25",
+    description:
+      "Started knocking doors. Built my first team in the UK, expanded to Ireland and USA. Scaled to 100+ reps across three countries.",
+    icon: Flame,
   },
   {
-    year: "The Expansion",
-    title: "International Growth",
-    description: "Took the Street CEO system to Ireland and the USA. 100+ reps across three countries. £1M+ years became the standard.",
+    year: "The Fall",
+    title: "I Lost Everything",
+    description:
+      "Bad decisions, wrong partnerships, overconfidence. I lost the money, the team, myself. Most people never talk about this part.",
+    icon: TrendingDown,
   },
   {
-    year: "The Mission",
-    title: "Building The Movement",
-    description: "Now I teach others what took me years to learn. The Street CEO isn't just my story - it's a blueprint for transformation.",
+    year: "The Rebuild",
+    title: "Coming Back at 32",
+    description:
+      "Now rebuilding publicly. Every lesson documented. This isn't a comeback story - it's proof that transformation is a daily choice.",
+    icon: RefreshCw,
+  },
+];
+
+const whatMakesDifferent = [
+  {
+    title: "Lived Experience, Not Theory",
+    description:
+      "Everything I teach comes from doing it - building, failing, rebuilding. Not from reading books or getting certifications.",
+  },
+  {
+    title: "Built From Nothing",
+    description:
+      "No privilege, no connections, no safety net. If you're starting from zero, I've been exactly where you are.",
+  },
+  {
+    title: "Transparent About Failure",
+    description:
+      "Most coaches hide their losses. I share everything - the wins, the crashes, the lessons learned the hard way.",
+  },
+  {
+    title: "Still In The Arena",
+    description:
+      "I'm not retired advice-giver. I'm actively building, competing, and proving the principles work in real-time.",
   },
 ];
 
@@ -42,30 +79,34 @@ const philosophy = [
   {
     icon: Target,
     title: "Discipline Over Motivation",
-    description: "Motivation fades. Discipline delivers. I teach systems that work when feelings don't.",
+    description:
+      "Motivation fades. Discipline delivers. I teach systems that work when feelings don't.",
   },
   {
     icon: Shield,
     title: "Street-Smart Strategy",
-    description: "Theory means nothing without street-level execution. Everything I teach has been battle-tested.",
+    description:
+      "Theory means nothing without execution. Everything I teach has been battle-tested.",
   },
   {
     icon: Flame,
     title: "Relentless Execution",
-    description: "Ideas are worthless without action. I build high-performers who execute, not dreamers who plan.",
+    description:
+      "Ideas are worthless without action. I build high-performers who execute.",
   },
   {
     icon: Crown,
     title: "Identity Transformation",
-    description: "You can't outperform your identity. I help people become who they need to be to achieve what they want.",
+    description:
+      "You can't outperform your identity. I help people become who they need to be.",
   },
 ];
 
 const stats = [
-  { value: 3, suffix: "", label: "Countries Operated" },
-  { value: 100, suffix: "+", label: "Reps Scaled" },
-  { value: 1, prefix: "£", suffix: "M+", label: "Revenue Generated" },
-  { value: 10, suffix: "+", label: "Years Experience" },
+  { value: 7, prefix: "", suffix: " Figures", label: "Built by 25" },
+  { value: 100, prefix: "", suffix: "+", label: "Reps Scaled" },
+  { value: 3, prefix: "", suffix: "", label: "Countries" },
+  { value: 32, prefix: "", suffix: "", label: "Rebuilding at" },
 ];
 
 export function AboutPageContent() {
@@ -87,21 +128,23 @@ export function AboutPageContent() {
               variants={staggerItem}
               className="inline-block text-[var(--gold)] text-sm font-semibold uppercase tracking-widest mb-4"
             >
-              The Man Behind The Movement
+              Meet Cameron
             </motion.span>
             <motion.h1
               variants={staggerItem}
               className="font-display text-5xl lg:text-7xl font-bold text-white mb-6"
             >
-              From The Streets To{" "}
-              <span className="text-gold-gradient">The Boardroom</span>
+              I Built Millions.{" "}
+              <span className="text-gold-gradient">Lost It All.</span>
+              <br />
+              Now I&apos;m Coming Back.
             </motion.h1>
             <motion.p
               variants={staggerItem}
               className="text-xl text-white/70 max-w-2xl"
             >
-              I didn&apos;t inherit success. I built it from nothing. Every rejection, every failure,
-              every sleepless night forged the leader I am today.
+              Most coaches show you the highlight reel. Here&apos;s the truth -
+              the rise, the crash, and the rebuild. No filters.
             </motion.p>
           </motion.div>
         </div>
@@ -136,13 +179,50 @@ export function AboutPageContent() {
         </div>
       </section>
 
-      {/* Origin Story */}
+      {/* What Makes Cameron Different */}
       <section className="section-padding bg-black">
         <div className="container-wide">
           <SectionHeading
-            label="My Journey"
-            title="The Origin Story"
-            description="Every empire starts somewhere. Mine started with nothing but hunger and an unshakeable belief in transformation."
+            label="The Difference"
+            title="Why Work With Me"
+            description="What separates real transformation from motivational fluff."
+          />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          >
+            {whatMakesDifferent.map((item, index) => (
+              <motion.div key={index} variants={staggerItem}>
+                <GlassCard className="h-full" delay={index * 0.1}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-[var(--gold)]/10 border border-[var(--gold)]/20 flex items-center justify-center shrink-0">
+                      <Check className="w-4 h-4 text-[var(--gold)]" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-bold text-white mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-white/60 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Origin Story */}
+      <section className="section-padding bg-[var(--charcoal)]">
+        <div className="container-wide">
+          <SectionHeading
+            label="The Full Story"
+            title="Rise. Fall. Rebuild."
+            description="Most coaches only show you the highlight reel."
             align="left"
           />
 
@@ -157,30 +237,45 @@ export function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: index * 0.1 }}
-                className={`relative grid lg:grid-cols-2 gap-8 mb-12 ${
+                className={`relative grid lg:grid-cols-2 gap-8 mb-16 ${
                   index % 2 === 0 ? "" : "lg:text-right"
                 }`}
               >
                 {/* Content */}
-                <div className={`pl-12 lg:pl-0 ${index % 2 === 0 ? "lg:pr-16" : "lg:order-2 lg:pl-16"}`}>
-                  <span className="text-[var(--gold)] text-sm font-semibold uppercase tracking-widest">
-                    {item.year}
-                  </span>
-                  <h3 className="font-display text-2xl font-bold text-white mt-2 mb-3">
+                <div
+                  className={`pl-12 lg:pl-0 ${
+                    index % 2 === 0 ? "lg:pr-16" : "lg:order-2 lg:pl-16"
+                  }`}
+                >
+                  <div
+                    className={`flex items-center gap-3 mb-3 ${
+                      index % 2 === 1 ? "lg:justify-end" : ""
+                    }`}
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[var(--gold)]/10 border border-[var(--gold)]/20 flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-[var(--gold)]" />
+                    </div>
+                    <span className="text-[var(--gold)] text-sm font-semibold uppercase tracking-widest">
+                      {item.year}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-white/60">
-                    {item.description}
-                  </p>
+                  <p className="text-white/60 leading-relaxed">{item.description}</p>
                 </div>
 
                 {/* Timeline dot */}
                 <div className="absolute left-4 lg:left-1/2 top-0 -translate-x-1/2">
-                  <div className="w-4 h-4 rounded-full bg-[var(--gold)] border-4 border-black" />
+                  <div className="w-4 h-4 rounded-full bg-[var(--gold)] border-4 border-[var(--charcoal)]" />
                 </div>
 
                 {/* Empty space for alternating layout */}
-                <div className={index % 2 === 0 ? "hidden lg:block" : "hidden lg:block lg:order-1"} />
+                <div
+                  className={
+                    index % 2 === 0 ? "hidden lg:block" : "hidden lg:block lg:order-1"
+                  }
+                />
               </motion.div>
             ))}
           </div>
@@ -188,12 +283,12 @@ export function AboutPageContent() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="section-padding bg-[var(--charcoal)]">
+      <section className="section-padding bg-black">
         <div className="container-wide">
           <SectionHeading
             label="My Philosophy"
             title="The Street CEO Way"
-            description="These aren't just principles - they're the foundation of every transformation I've created."
+            description="The foundation of every transformation I create."
           />
 
           <motion.div
@@ -214,9 +309,7 @@ export function AboutPageContent() {
                       <h3 className="font-display text-xl font-bold text-white mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-white/60">
-                        {item.description}
-                      </p>
+                      <p className="text-white/60">{item.description}</p>
                     </div>
                   </div>
                 </GlassCard>
@@ -227,7 +320,7 @@ export function AboutPageContent() {
       </section>
 
       {/* Mission Statement */}
-      <section className="section-padding bg-black relative overflow-hidden">
+      <section className="section-padding bg-[var(--charcoal)] relative overflow-hidden">
         <FloatingOrb className="top-0 left-1/4" size="xl" delay={0} />
 
         <div className="container-wide relative">
@@ -241,13 +334,14 @@ export function AboutPageContent() {
               My Mission
             </span>
             <blockquote className="font-display text-3xl lg:text-5xl font-bold text-white leading-tight mb-8">
-              &ldquo;To show every hungry soul that your past doesn&apos;t define your future.
+              &ldquo;To show every hungry soul that your past doesn&apos;t define
+              your future.
               <span className="text-gold-gradient"> Transformation is possible.</span>
-              Success is a decision.&rdquo;
+              &rdquo;
             </blockquote>
             <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              I&apos;ve dedicated my life to proving that where you start doesn&apos;t determine where you finish.
-              Through coaching, speaking, and community, I&apos;m building an army of transformed high-performers.
+              Through coaching, speaking, and community, I&apos;m building an army
+              of transformed high-performers who execute.
             </p>
           </motion.div>
         </div>
@@ -266,7 +360,8 @@ export function AboutPageContent() {
               Ready to Transform?
             </h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
-              Whether through coaching, programs, or live events - I&apos;m ready to help you build your empire.
+              Whether through coaching or a powerful keynote - I&apos;m ready to
+              help you and your team execute.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/coaching">
@@ -275,9 +370,10 @@ export function AboutPageContent() {
                   <ArrowRight className="w-4 h-4 ml-2 inline-block" />
                 </MagneticButton>
               </Link>
-              <Link href="/programs">
+              <Link href="/speaking">
                 <MagneticButton variant="outline" size="lg">
-                  Explore Programs
+                  <Mic className="w-4 h-4 mr-2 inline-block" />
+                  Book a Keynote
                 </MagneticButton>
               </Link>
             </div>
