@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Linkedin, Youtube, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -92,7 +93,14 @@ export function Footer() {
         >
           {/* Brand Column */}
           <motion.div variants={staggerItem} className="col-span-2 lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
+              <Image
+                src="/logo.svg"
+                alt="The Street CEO"
+                width={27}
+                height={45}
+                className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
+              />
               <span className="font-display text-2xl font-bold">
                 <span className="text-white">THE STREET</span>{" "}
                 <span className="text-gold-gradient">CEO</span>

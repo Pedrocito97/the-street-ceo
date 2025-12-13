@@ -2,31 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Play, Target, Mic, Users } from "lucide-react";
+import { ArrowRight, Target, Mic, Users } from "lucide-react";
 import { MagneticButton } from "@/components/shared/magnetic-button";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 export function HeroHome() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Gritty UK Urban Street Scene */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1520986606214-8b456906c813?q=80&w=2068&auto=format&fit=crop"
-          alt="Dark urban street at night - UK vibes"
-          fill
-          className="object-cover object-center scale-105"
-          priority
-          quality={90}
-        />
-        {/* Heavy dark overlay for gritty feel */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black" />
-        {/* Subtle gold accent at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--gold)]/5 to-transparent" />
-        {/* Vignette effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,black_100%)] opacity-40" />
-      </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[var(--charcoal)] to-black" />
+
+      {/* Subtle gold accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--gold)]/5 to-transparent" />
 
       {/* Animated grain/noise overlay for gritty texture */}
       <div
@@ -37,18 +24,16 @@ export function HeroHome() {
         }}
       />
 
-      {/* Cinematic bars (letterbox effect) */}
-      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent z-20" />
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-20" />
-
       {/* Content */}
       <div className="relative z-10 container-wide py-32 lg:py-40">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="max-w-5xl mx-auto text-center"
-        >
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Text Content */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="text-center lg:text-left"
+          >
           {/* Value Proposition Badge */}
           <motion.div variants={staggerItem} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm border border-[var(--gold)]/30 text-[var(--gold)] text-sm font-medium uppercase tracking-widest">
@@ -93,7 +78,7 @@ export function HeroHome() {
           {/* Service Pills */}
           <motion.div
             variants={staggerItem}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12"
           >
             {[
               { icon: Mic, label: "Keynote Speaker", href: "/speaking" },
@@ -116,7 +101,7 @@ export function HeroHome() {
           {/* CTAs */}
           <motion.div
             variants={staggerItem}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
           >
             <Link href="/speaking">
               <MagneticButton size="xl">
@@ -135,7 +120,7 @@ export function HeroHome() {
           {/* Trust indicators */}
           <motion.div
             variants={staggerItem}
-            className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-white/50"
+            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-white/50"
           >
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -148,12 +133,47 @@ export function HeroHome() {
           </motion.div>
         </motion.div>
 
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative aspect-[3/4] max-w-md mx-auto">
+              {/* Glow effect behind image */}
+              <div className="absolute inset-0 bg-[var(--gold)]/20 blur-3xl rounded-full transform scale-75" />
+
+              {/* Main image */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <img
+                  src="/images/speaking/cameron-speaking-full.jpg"
+                  alt="Cameron Murrell - Keynote Speaker"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute -bottom-4 -left-4 bg-[var(--charcoal)] border border-[var(--gold)]/30 rounded-xl px-4 py-3 shadow-xl"
+              >
+                <p className="text-[var(--gold)] text-xs uppercase tracking-wider font-semibold">International Speaker</p>
+                <p className="text-white text-sm font-bold">50+ Events · 5 Countries</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.5 }}
-          className="absolute bottom-24 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

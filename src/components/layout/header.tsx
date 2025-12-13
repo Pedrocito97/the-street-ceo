@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useScroll } from "@/hooks/use-scroll";
@@ -36,7 +37,14 @@ export function Header() {
         <div className="container-wide">
           <nav className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
-            <Link href="/" className="relative z-10 group">
+            <Link href="/" className="relative z-10 group flex items-center gap-2 lg:gap-3">
+              <Image
+                src="/logo.svg"
+                alt="The Street CEO"
+                width={24}
+                height={40}
+                className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
+              />
               <span className="font-display text-xl lg:text-2xl font-bold tracking-tight">
                 <span className="text-white">THE STREET</span>{" "}
                 <span className="text-gold-gradient">CEO</span>

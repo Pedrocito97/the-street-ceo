@@ -150,6 +150,44 @@ export function AboutPageContent() {
         </div>
       </section>
 
+      {/* Visual Grid */}
+      <section className="py-12 bg-black">
+        <div className="container-wide">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-3 gap-3 lg:gap-4"
+          >
+            <motion.div variants={staggerItem} className="relative aspect-[3/4] rounded-xl overflow-hidden group">
+              <img
+                src="/images/speaking/cameron-speaking-full.jpg"
+                alt="Cameron speaking on stage"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </motion.div>
+            <motion.div variants={staggerItem} className="relative aspect-[3/4] rounded-xl overflow-hidden group">
+              <img
+                src="/images/speaking/cameron-podium.jpg"
+                alt="Cameron at podium"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </motion.div>
+            <motion.div variants={staggerItem} className="relative aspect-[3/4] rounded-xl overflow-hidden group">
+              <img
+                src="/images/speaking/cameron-speaking-medium.jpg"
+                alt="Cameron delivering keynote"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-12 bg-[var(--charcoal)] border-y border-white/5">
         <div className="container-wide">

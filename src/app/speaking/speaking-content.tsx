@@ -224,21 +224,19 @@ export function SpeakingPageContent() {
               </motion.div>
             </motion.div>
 
-            {/* Video Placeholder */}
+            {/* Hero Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="relative aspect-video rounded-2xl overflow-hidden glass-card"
+              className="relative aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden glass-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--street-grey)] to-black flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[var(--gold)]/20 border-2 border-[var(--gold)]/30 flex items-center justify-center cursor-pointer hover:bg-[var(--gold)]/30 transition-all">
-                    <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-[var(--gold)] border-b-8 border-b-transparent ml-1" />
-                  </div>
-                  <p className="text-white/40 text-sm">Speaker Reel</p>
-                </div>
-              </div>
+              <img
+                src="/images/speaking/cameron-speaking-full.jpg"
+                alt="Cameron Murrell speaking on stage"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </motion.div>
           </div>
         </div>
@@ -433,8 +431,53 @@ export function SpeakingPageContent() {
         </div>
       </section>
 
-      {/* For Meeting Planners */}
+      {/* Gallery Section */}
       <section className="section-padding bg-black">
+        <div className="container-wide">
+          <SectionHeading
+            label="In Action"
+            title="Cameron On Stage"
+            description="Delivering transformational keynotes across the globe."
+          />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            {[
+              { src: "/images/speaking/cameron-podium.jpg", alt: "Cameron speaking at podium" },
+              { src: "/images/speaking/cameron-speaking-medium.jpg", alt: "Cameron on stage with microphone" },
+              { src: "/images/speaking/cameron-stage-duo.jpg", alt: "Cameron on stage at entrepreneur summit" },
+              { src: "/images/speaking/cameron-stage-group.jpg", alt: "Cameron presenting with co-speakers" },
+              { src: "/images/speaking/cameron-audience.jpg", alt: "Cameron with engaged audience" },
+              { src: "/images/speaking/cameron-speaking-full.jpg", alt: "Cameron delivering keynote" },
+            ].map((image, index) => (
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                className={`relative overflow-hidden rounded-xl glass-card group ${
+                  index === 0 ? "col-span-2 lg:col-span-1 row-span-2" : ""
+                }`}
+              >
+                <div className={`relative ${index === 0 ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* For Meeting Planners */}
+      <section className="section-padding bg-[var(--charcoal)]">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
