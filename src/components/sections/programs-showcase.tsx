@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Flame, Crown, Rocket } from "lucide-react";
+import { ArrowRight, Target, Crown, Rocket } from "lucide-react";
 import { GlassCard } from "@/components/shared/glass-card";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { MagneticButton } from "@/components/shared/magnetic-button";
@@ -11,10 +11,10 @@ import { staggerContainer, staggerItem } from "@/lib/animations";
 
 const programs = [
   {
-    icon: Flame,
-    title: "The Street CEO Mindset",
-    description: "Stop making excuses. Start making moves. This program rewires your brain for success — the raw, unfiltered mental warfare that separates winners from everyone else.",
-    features: ["Destroy Limiting Beliefs", "Build Iron Discipline", "Create Your Killer Identity"],
+    icon: Target,
+    title: "Mindset Mastery",
+    description: "Transform the way you think and operate. This program rewires your mindset for success — building the mental frameworks that separate high-performers from everyone else.",
+    features: ["Overcome Limiting Beliefs", "Build Unshakeable Discipline", "Develop a Winning Identity"],
     href: "/programs/mindset",
     featured: true,
     image: "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?q=80&w=1470&auto=format&fit=crop",
@@ -22,8 +22,8 @@ const programs = [
   {
     icon: Rocket,
     title: "Sales Accelerator",
-    description: "No theory. No BS. The exact playbook I used to build 100+ rep teams and close millions. If you can't sell, you can't eat.",
-    features: ["Kill Objections Dead", "Lead Hungry Teams", "Stack Revenue Fast"],
+    description: "The proven playbook I used to build 100+ rep teams and generate millions in revenue. Master the art of selling and leading sales teams.",
+    features: ["Handle Any Objection", "Build High-Performing Teams", "Scale Revenue Consistently"],
     href: "/programs/sales",
     featured: false,
     image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1470&auto=format&fit=crop",
@@ -31,8 +31,8 @@ const programs = [
   {
     icon: Crown,
     title: "Leadership System",
-    description: "Leading yourself is hard. Leading others is war. Learn to build, inspire, and scale teams that would run through walls for you.",
-    features: ["Build Elite Teams", "Create Winning Culture", "Scale Without Burnout"],
+    description: "Learn to build, inspire, and scale teams that deliver exceptional results. Transform from manager to leader people genuinely want to follow.",
+    features: ["Build Loyal Teams", "Create Winning Culture", "Scale Without Burnout"],
     href: "/programs/leadership",
     featured: false,
     image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1470&auto=format&fit=crop",
@@ -55,9 +55,9 @@ export function ProgramsShowcase() {
 
       <div className="container-wide relative">
         <SectionHeading
-          label="Stop Watching. Start Winning."
-          title="Battle-Tested Programs"
-          description="These aren't courses. They're weapons. Pick yours and get to work."
+          label="Programs"
+          title="Proven Programs for Transformation"
+          description="Battle-tested strategies and frameworks designed to create lasting change. Choose the path that fits your goals."
         />
 
         <motion.div
@@ -118,7 +118,7 @@ export function ProgramsShowcase() {
                   href={program.href}
                   className="group flex items-center gap-2 text-[var(--gold)] font-semibold text-sm uppercase tracking-wide hover:gap-3 transition-all"
                 >
-                  Start Now
+                  Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </GlassCard>

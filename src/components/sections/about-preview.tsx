@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/shared/magnetic-button";
 import { fadeInLeft, fadeInRight } from "@/lib/animations";
 
@@ -15,7 +15,7 @@ export function AboutPreview() {
 
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image - Urban Street Collage Style */}
+          {/* Image */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -23,35 +23,20 @@ export function AboutPreview() {
             variants={fadeInLeft}
             className="relative"
           >
-            {/* Main Image - UK Council Estate / Gritty Urban */}
+            {/* Main Image */}
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=987&auto=format&fit=crop"
-                alt="Gritty urban council estate - where it all started"
+                src="/images/speaking/cameron-speaking-medium.jpg"
+                alt="Cameron Murrell - Coach, Speaker & Entrepreneur"
                 fill
                 className="object-cover"
                 quality={85}
               />
-              {/* Heavy overlay for mood */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+              {/* Subtle overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
               {/* Gold border accent */}
               <div className="absolute inset-0 border-2 border-[var(--gold)]/20 rounded-2xl" />
-
-              {/* Street text overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="font-display text-3xl lg:text-4xl font-bold text-white uppercase tracking-tight"
-                >
-                  From The
-                  <span className="block text-[var(--gold)]">Concrete</span>
-                </motion.p>
-              </div>
             </div>
 
             {/* Floating Experience Badge */}
@@ -63,21 +48,7 @@ export function AboutPreview() {
               className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-black border border-[var(--gold)]/30 rounded-xl p-5 backdrop-blur-sm"
             >
               <div className="font-display text-4xl font-bold text-[var(--gold)]">10+</div>
-              <div className="text-white/70 text-sm font-medium">Years In The Trenches</div>
-            </motion.div>
-
-            {/* Quote overlay */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
-              className="absolute top-6 right-6 bg-black/90 backdrop-blur-sm border border-[var(--gold)]/20 rounded-lg p-4 max-w-[200px]"
-            >
-              <Quote className="w-5 h-5 text-[var(--gold)] mb-2" />
-              <p className="text-white/80 text-sm italic">
-                &ldquo;The streets taught me more than any school ever could.&rdquo;
-              </p>
+              <div className="text-white/70 text-sm font-medium">Years of Experience</div>
             </motion.div>
           </motion.div>
 
@@ -89,34 +60,34 @@ export function AboutPreview() {
             variants={fadeInRight}
           >
             <span className="inline-block text-[var(--gold)] text-sm font-semibold uppercase tracking-widest mb-4">
-              The Man Behind The Movement
+              Meet Cameron
             </span>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              From The Streets
+              Built From Real
               <br />
-              <span className="text-gold-gradient">To The Boardroom</span>
+              <span className="text-gold-gradient">Experience</span>
             </h2>
 
-            {/* Story - Raw and authentic */}
+            {/* Story - Authentic but professional */}
             <div className="space-y-4 text-white/70 text-lg mb-8">
               <p className="text-white/90 font-medium">
-                I didn&apos;t have connections. I didn&apos;t have capital. I didn&apos;t have a safety net.
+                I didn&apos;t start with connections, capital, or a safety net.
               </p>
               <p>
-                What I had was hunger. The kind that wakes you up at 5am and keeps you grinding when everyone else quits. The kind that turns &ldquo;no&rdquo; into fuel.
+                What I had was drive. The kind that gets you up early and keeps you going when others quit. Through building 7-figure operations, leading teams across 3 countries, and yes — losing it all and rebuilding — I&apos;ve learned what actually works.
               </p>
               <p>
-                From door-to-door sales in the UK to building international teams across Ireland and the USA — every lesson was paid for in blood, sweat, and rejection.
+                Now I help ambitious leaders and organizations transform their mindset and achieve results they never thought possible.
               </p>
             </div>
 
             {/* Key differentiators */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
-                "Street-Smart Strategy",
-                "Battle-Tested Methods",
-                "Real Results Only",
-                "Zero Fluff Approach",
+                "Proven Strategies",
+                "Real-World Experience",
+                "Actionable Insights",
+                "Results-Focused",
               ].map((point, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[var(--gold)]" />
@@ -127,7 +98,7 @@ export function AboutPreview() {
 
             <Link href="/about">
               <MagneticButton size="lg">
-                Read The Full Story
+                Read My Story
                 <ArrowRight className="w-4 h-4 ml-2 inline-block" />
               </MagneticButton>
             </Link>

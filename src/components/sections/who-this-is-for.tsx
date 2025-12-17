@@ -2,48 +2,46 @@
 
 import { motion } from "framer-motion";
 import {
-  Flame,
-  GraduationCap,
-  Building2,
+  Target,
   Users,
   TrendingUp,
-  RefreshCw,
-  Target,
-  Compass,
+  Briefcase,
+  Rocket,
+  Award,
 } from "lucide-react";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 const audiences = [
   {
-    icon: RefreshCw,
-    title: "People Who've Struggled",
-    description: "You've been knocked down. You've failed. You're rebuilding.",
-  },
-  {
-    icon: GraduationCap,
-    title: "No Fancy Degrees",
-    description: "You learned on the streets, not in a classroom.",
-  },
-  {
-    icon: Building2,
-    title: "From The Cities",
-    description: "Urban environment. Real pressure. No silver spoons.",
+    icon: TrendingUp,
+    title: "Ambitious Professionals",
+    description: "Ready to break through plateaus and reach the next level in your career.",
   },
   {
     icon: Users,
-    title: "Family Depending On You",
-    description: "Failure isn't an option when people count on you.",
+    title: "Team Leaders",
+    description: "Looking to build and inspire high-performing teams that deliver results.",
   },
   {
-    icon: TrendingUp,
-    title: "Salespeople & Hustlers",
-    description: "You know how to grind. You just need the right system.",
+    icon: Briefcase,
+    title: "Sales Teams",
+    description: "Want proven strategies to close more deals and exceed targets consistently.",
   },
   {
-    icon: Compass,
-    title: "Men Without Direction",
-    description: "Young or rebuilding at 30+ - you need a path forward.",
+    icon: Rocket,
+    title: "Entrepreneurs",
+    description: "Building something from the ground up and need the right mindset to scale.",
+  },
+  {
+    icon: Target,
+    title: "Goal-Driven Individuals",
+    description: "Committed to personal growth and ready to take action on your ambitions.",
+  },
+  {
+    icon: Award,
+    title: "Organizations",
+    description: "Seeking transformational keynotes and training that create lasting impact.",
   },
 ];
 
@@ -55,9 +53,9 @@ export function WhoThisIsFor() {
 
       <div className="container-wide relative">
         <SectionHeading
-          label="Who I Speak To"
-          title="This Is For The Hungry"
-          description="Not for middle-class comfort seekers. For people who NEED to win."
+          label="Who I Work With"
+          title="For Ambitious Leaders Ready to Transform"
+          description="Whether you're an individual seeking growth or an organization looking to elevate your team — I'm here to help you execute."
         />
 
         <motion.div
@@ -96,10 +94,10 @@ export function WhoThisIsFor() {
           className="mt-12 text-center"
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[var(--gold)]/10 border border-[var(--gold)]/20">
-            <Flame className="w-5 h-5 text-[var(--gold)]" />
+            <Target className="w-5 h-5 text-[var(--gold)]" />
             <p className="text-white font-medium">
-              His audience is broad.{" "}
-              <span className="text-[var(--gold)]">Yours is hungry.</span>
+              Ready to transform?{" "}
+              <span className="text-[var(--gold)]">Let&apos;s make it happen.</span>
             </p>
           </div>
         </motion.div>

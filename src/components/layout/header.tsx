@@ -40,14 +40,14 @@ export function Header() {
             <Link href="/" className="relative z-10 group flex items-center gap-2 lg:gap-3">
               <Image
                 src="/logo.svg"
-                alt="The Street CEO"
+                alt="Cameron Murrell"
                 width={24}
                 height={40}
                 className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
               />
-              <span className="font-display text-xl lg:text-2xl font-bold tracking-tight">
-                <span className="text-white">THE STREET</span>{" "}
-                <span className="text-gold-gradient">CEO</span>
+              <span className="font-display text-lg lg:text-xl font-bold tracking-tight uppercase">
+                <span className="text-white">Cameron</span>{" "}
+                <span className="text-gold-gradient">Murrell</span>
               </span>
             </Link>
 

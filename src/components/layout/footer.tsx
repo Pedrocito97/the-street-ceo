@@ -31,10 +31,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { href: "https://instagram.com/thestreetceo", icon: Instagram, label: "Instagram" },
-  { href: "https://twitter.com/thestreetceo", icon: Twitter, label: "Twitter" },
+  { href: "https://instagram.com/cameronmurrell", icon: Instagram, label: "Instagram" },
+  { href: "https://twitter.com/cameronmurrell", icon: Twitter, label: "Twitter" },
   { href: "https://linkedin.com/in/cameronmurrell", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://youtube.com/@thestreetceo", icon: Youtube, label: "YouTube" },
+  { href: "https://youtube.com/@cameronmurrell", icon: Youtube, label: "YouTube" },
 ];
 
 export function Footer() {
@@ -56,13 +56,13 @@ export function Footer() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <span className="text-[var(--gold)] text-sm font-semibold uppercase tracking-widest">
-                  Join The Movement
+                  Join The Community
                 </span>
                 <h3 className="font-display text-3xl lg:text-4xl font-bold mt-2 mb-4">
-                  The Street CEO Inner Circle
+                  Get Weekly Insights
                 </h3>
                 <p className="text-white/70 max-w-md">
-                  Get exclusive insights, strategies, and motivation delivered straight to your inbox. Join thousands transforming their lives.
+                  Exclusive strategies, mindset shifts, and actionable insights delivered to your inbox. Join ambitious leaders transforming their results.
                 </p>
               </div>
               <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
@@ -96,18 +96,18 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
               <Image
                 src="/logo.svg"
-                alt="The Street CEO"
+                alt="Cameron Murrell"
                 width={27}
                 height={45}
                 className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
               />
-              <span className="font-display text-2xl font-bold">
-                <span className="text-white">THE STREET</span>{" "}
-                <span className="text-gold-gradient">CEO</span>
+              <span className="font-display text-xl font-bold uppercase">
+                <span className="text-white">Cameron</span>{" "}
+                <span className="text-gold-gradient">Murrell</span>
               </span>
             </Link>
             <p className="text-white/60 mb-6 max-w-sm">
-              From the streets to the boardroom. Building high-performers who transform their lives through discipline, strategy, and relentless action.
+              Coach, speaker, and entrepreneur helping ambitious leaders transform their mindset and results through proven strategies and relentless execution.
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
@@ -184,11 +184,11 @@ export function Footer() {
             {/* Contact */}
             <div className="mt-6">
               <a
-                href="mailto:contact@thestreetceo.com"
+                href="mailto:hello@cameronmurrell.com"
                 className="flex items-center gap-2 text-white/60 hover:text-[var(--gold)] transition-colors text-sm"
               >
                 <Mail className="w-4 h-4" />
-                contact@thestreetceo.com
+                hello@cameronmurrell.com
               </a>
             </div>
           </motion.div>
@@ -198,10 +198,10 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm">
-              &copy; {new Date().getFullYear()} The Street CEO. All rights reserved.
+              &copy; {new Date().getFullYear()} Cameron Murrell. All rights reserved.
             </p>
             <p className="text-white/40 text-sm">
-              Built with discipline. Delivered with excellence.
+              Transform your mindset. Transform your results.
             </p>
           </div>
         </div>

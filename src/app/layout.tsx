@@ -3,44 +3,43 @@ import { spaceGrotesk, clashDisplay } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thestreetceo.com"),
+  metadataBase: new URL("https://cameronmurrell.com"),
   title: {
-    default: "The Street CEO | Keynote Speaker & Executive Coach | Cameron Murrell",
-    template: "%s | The Street CEO",
+    default: "Cameron Murrell | Coach, Speaker & Entrepreneur",
+    template: "%s | Cameron Murrell",
   },
   description:
-    "Build leaders who execute. High-impact keynotes and executive coaching for sales teams, leaders, and organizations. 50+ events, 98% satisfaction. Book Cameron Murrell.",
+    "Transform your mindset and results with Cameron Murrell. High-impact coaching and keynotes for ambitious leaders ready to execute. 50+ events, 98% satisfaction.",
   keywords: [
-    "The Street CEO",
     "Cameron Murrell",
     "keynote speaker",
-    "sales leadership speaker",
     "executive coaching",
-    "sales team training",
-    "discipline coaching",
+    "leadership coach",
+    "mindset coaching",
     "business transformation",
     "motivational speaker UK",
     "leadership development",
-    "team coaching",
     "high-performance coaching",
+    "sales leadership",
+    "entrepreneur",
   ],
   authors: [{ name: "Cameron Murrell" }],
-  creator: "The Street CEO",
+  creator: "Cameron Murrell",
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "The Street CEO",
-    title: "The Street CEO | Keynote Speaker & Executive Coach",
+    siteName: "Cameron Murrell",
+    title: "Cameron Murrell | Coach, Speaker & Entrepreneur",
     description:
-      "Build leaders who execute. High-impact keynotes and executive coaching for sales teams and organizations.",
+      "Transform your mindset and results. High-impact coaching and keynotes for ambitious leaders.",
     images: ["/images/og-default.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Street CEO | Keynote Speaker & Executive Coach",
+    title: "Cameron Murrell | Coach, Speaker & Entrepreneur",
     description:
-      "Build leaders who execute. High-impact keynotes and executive coaching for sales teams and organizations.",
-    creator: "@thestreetceo",
+      "Transform your mindset and results. High-impact coaching and keynotes for ambitious leaders.",
+    creator: "@cameronmurrell",
   },
   robots: {
     index: true,

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Target, Mic, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/shared/magnetic-button";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
@@ -34,104 +34,84 @@ export function HeroHome() {
             variants={staggerContainer}
             className="text-center lg:text-left"
           >
-          {/* Value Proposition Badge */}
-          <motion.div variants={staggerItem} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm border border-[var(--gold)]/30 text-[var(--gold)] text-sm font-medium uppercase tracking-widest">
-              <Target className="w-4 h-4" />
-              Keynotes · Coaching · Transformation
-            </span>
-          </motion.div>
+            {/* Name - Large and prominent */}
+            <motion.h1
+              variants={staggerItem}
+              className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 tracking-tight"
+            >
+              <span className="block">CAMERON</span>
+              <span className="block text-gold-gradient">MURRELL</span>
+            </motion.h1>
 
-          {/* Main Headline - Buyer Focused */}
-          <motion.h1
-            variants={staggerItem}
-            className="font-display text-hero text-white mb-4"
-          >
-            <span className="block">BUILD LEADERS</span>
-            <span className="block">
-              WHO <span className="text-gold-gradient">EXECUTE.</span>
-            </span>
-          </motion.h1>
+            {/* Tagline */}
+            <motion.p
+              variants={staggerItem}
+              className="text-lg lg:text-xl text-white/60 font-medium uppercase tracking-widest mb-8"
+            >
+              Coach · Speaker · Entrepreneur
+            </motion.p>
 
-          {/* Subheadline - The problem & solution */}
-          <motion.p
-            variants={staggerItem}
-            className="font-display text-2xl lg:text-3xl font-bold text-white tracking-wide mb-6"
-          >
-            Transform your team&apos;s mindset.{" "}
-            <span className="text-[var(--gold)]">Transform your results.</span>
-          </motion.p>
+            {/* Main Value Proposition */}
+            <motion.h2
+              variants={staggerItem}
+              className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight"
+            >
+              Step Into Your Power.{" "}
+              <span className="text-[var(--gold)]">
+                Build a Life of Discipline and a Business of Impact.
+              </span>
+            </motion.h2>
 
-          {/* Description - Value proposition */}
-          <motion.p
-            variants={staggerItem}
-            className="text-lg lg:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed"
-          >
-            High-impact keynotes and coaching for sales teams, leaders, and
-            organizations ready to stop making excuses and start executing.
-            <span className="block mt-2 text-white/60">
-              Built from real experience: 7 figures by 25, 100+ reps scaled, 3
-              countries.
-            </span>
-          </motion.p>
+            {/* Description */}
+            <motion.p
+              variants={staggerItem}
+              className="text-lg lg:text-xl text-white/70 max-w-xl mb-10 leading-relaxed"
+            >
+              From building 7-figure operations to coaching high-performers across
+              3 countries — I help ambitious people transform their mindset and
+              their results.
+            </motion.p>
 
-          {/* Service Pills */}
-          <motion.div
-            variants={staggerItem}
-            className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12"
-          >
-            {[
-              { icon: Mic, label: "Keynote Speaker", href: "/speaking" },
-              { icon: Users, label: "Team Coaching", href: "/coaching" },
-              { icon: Target, label: "1-on-1 Coaching", href: "/coaching" },
-            ].map((service, index) => (
-              <Link
-                key={index}
-                href={service.href}
-                className="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/5 border border-white/10 hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/10 transition-all duration-300"
-              >
-                <service.icon className="w-4 h-4 text-[var(--gold)]" />
-                <span className="text-sm font-medium text-white/80 group-hover:text-white">
-                  {service.label}
-                </span>
+            {/* CTAs */}
+            <motion.div
+              variants={staggerItem}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
+            >
+              <Link href="/coaching">
+                <MagneticButton size="xl">
+                  Get Coached
+                  <ArrowRight className="w-5 h-5 ml-2 inline-block" />
+                </MagneticButton>
               </Link>
-            ))}
-          </motion.div>
+              <Link href="/speaking">
+                <MagneticButton variant="outline" size="xl">
+                  Book a Keynote
+                  <ArrowRight className="w-5 h-5 ml-2 inline-block" />
+                </MagneticButton>
+              </Link>
+            </motion.div>
 
-          {/* CTAs */}
-          <motion.div
-            variants={staggerItem}
-            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
-          >
-            <Link href="/speaking">
-              <MagneticButton size="xl">
-                Book a Keynote
-                <ArrowRight className="w-5 h-5 ml-2 inline-block" />
-              </MagneticButton>
-            </Link>
-            <Link href="/coaching">
-              <MagneticButton variant="outline" size="xl">
-                Explore Coaching
-                <ArrowRight className="w-5 h-5 ml-2 inline-block" />
-              </MagneticButton>
-            </Link>
+            {/* Stats Bar */}
+            <motion.div
+              variants={staggerItem}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-8"
+            >
+              <div className="text-center lg:text-left">
+                <p className="text-2xl lg:text-3xl font-bold text-[var(--gold)]">500+</p>
+                <p className="text-sm text-white/50 uppercase tracking-wide">Lives Transformed</p>
+              </div>
+              <div className="w-px h-12 bg-white/10 hidden sm:block" />
+              <div className="text-center lg:text-left">
+                <p className="text-2xl lg:text-3xl font-bold text-[var(--gold)]">50+</p>
+                <p className="text-sm text-white/50 uppercase tracking-wide">Events Delivered</p>
+              </div>
+              <div className="w-px h-12 bg-white/10 hidden sm:block" />
+              <div className="text-center lg:text-left">
+                <p className="text-2xl lg:text-3xl font-bold text-[var(--gold)]">3</p>
+                <p className="text-sm text-white/50 uppercase tracking-wide">Countries</p>
+              </div>
+            </motion.div>
           </motion.div>
-
-          {/* Trust indicators */}
-          <motion.div
-            variants={staggerItem}
-            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-white/50"
-          >
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Now booking 2025
-            </span>
-            <span className="hidden sm:block w-px h-4 bg-white/20" />
-            <span>50+ Events Delivered</span>
-            <span className="hidden sm:block w-px h-4 bg-white/20" />
-            <span>98% Satisfaction Rate</span>
-          </motion.div>
-        </motion.div>
 
           {/* Hero Image */}
           <motion.div
@@ -148,7 +128,7 @@ export function HeroHome() {
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img
                   src="/images/speaking/cameron-speaking-full.jpg"
-                  alt="Cameron Murrell - Keynote Speaker"
+                  alt="Cameron Murrell - Coach, Speaker & Entrepreneur"
                   className="w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
